@@ -1,0 +1,15 @@
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Carpetas de configuración del editor/IDE
+.vscode/
+.idea/
+
+# Archivos de log
+*.log
+
+# Si en algún momento usas Node y dependencias
+node_modules/
+
+SistemaDeTurnero.code-workspace

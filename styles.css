@@ -1,0 +1,118 @@
+/* Actualización de styles.css */
+
+/* Fuente y configuración general */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('logo-star-barbers.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+/* Agregamos una superposición para oscurecer el fondo y mejorar la legibilidad de los textos */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Encabezado */
+header {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.logo {
+  max-width: 150px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Contenedor principal */
+main {
+  padding: 20px;
+}
+
+/* Caja del formulario */
+.booking {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 40px auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Grupos del formulario */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #444;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+/* Botón de envío */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1em;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+/* Footer fijo */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.9em;
+}

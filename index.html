@@ -1,0 +1,113 @@
+<!--<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turnero - Star Barbers</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+  Asegúrate de tener el archivo "logo-star-barbers.png" o ajusta la ruta 
+    <img src="logo-star-barbers.png" alt="Logo de Star Barbers" class="logo">
+    <h1>Bienvenido a Star Barbers</h1>
+  </header>
+  <main>
+    <section class="intro">
+      <p>Selecciona el día y el horario que prefieras para reservar tu turno.</p>
+    </section>
+    <section class="booking">
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Teléfono:</label>
+          <input type="tel" id="phone" name="phone" placeholder="Tu teléfono" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" placeholder="Tu email" required>
+        </div>
+        <div class="form-group">
+          <label for="date">Fecha:</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+          <label for="time">Hora:</label>
+          <select id="time" name="time" required>
+            <option value="">Selecciona un horario</option>
+          </select>
+        </div>
+        <button type="submit">Reservar</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Star Barbers. Todos los derechos reservados.</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turnero - Star Barbers</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="logo-star-barbers.png" alt="Logo de Star Barbers" class="logo">
+    <h1>Bienvenido a Star Barbers</h1>
+  </header>
+  
+  <main>
+    <section class="booking">
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Teléfono:</label>
+          <input type="tel" id="phone" name="phone" placeholder="Tu teléfono" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" placeholder="Tu email" required>
+        </div>
+        <!-- Selección de servicio -->
+        <div class="form-group">
+          <label for="service">Servicio:</label>
+          <select id="service" name="service" required>
+            <option value="30">Corte de pelo (30 min)</option>
+            <option value="40">Corte + Barba (40 min)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="date">Fecha:</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+          <label for="time">Hora:</label>
+          <select id="time" name="time" required>
+            <option value="">Selecciona un horario</option>
+          </select>
+        </div>
+        <button type="submit">Reservar</button>
+      </form>
+    </section>
+  </main>
+  
+  <footer>
+    <p>© 2025 Star Barbers. Todos los derechos reservados.</p>
+  </footer>
+  
+  <script src="app.js"></script>
+</body>
+</html>
