@@ -90,7 +90,7 @@ function generateTimeSlots() {
     // Generar opciones en incrementos iguales a la duración del servicio
     for (let minutes = startTime; minutes + serviceDuration <= endTime; minutes += serviceDuration) {
         let hour = String(Math.floor(minutes / 60)).padStart(2, '0');
-        let min = (minutes % 60 === 0) ? "00" : minutes % 60;
+        let min = String(minutes % 60).padStart(2, '0');
         const timeStr = `${hour}:${min}`;
 
         const option = document.createElement("option");
@@ -111,7 +111,7 @@ function updateReservedTimes() {
     dateInput.addEventListener('change', function () {
         const selectedDate = dateInput.value;
         if (!selectedDate) return;
-        const reservedURL = `https://script.google.com/macros/s/AKfycbxtTgci4hPSo09SQrjJjrzBvGkKVoYunwVXK0LTrB_V2DzUR72DessxlK6LYJAOdVe2/exec?date=${selectedDate}`;
+        const reservedURL = `https://script.google.com/macros/s/AKfycbxDabc73shfF3OarFqZipEn7l-8qsMdoGo1pwS58Y9mcmjzwLmz6nHR0W8xkBaWS-hW/exec?date=${selectedDate}`;
         fetch(reservedURL)
             .then(response => response.json())
             .then(data => {
@@ -121,7 +121,7 @@ function updateReservedTimes() {
                     const reservedTimes = Array.isArray(data.reservations)
                         ? data.reservations
                         : [];
-                    // Recorremos cada opción para deshabilitar aquellas coincidentes
+                    // Recorremos cada opción para deshabilitar aquellas que ya están reservadas
                     Array.from(timeSelect.options).forEach(option => {
                         if (!option.value) return;
                         reservedTimes.forEach(reservation => {
@@ -151,8 +151,8 @@ document.getElementById('bookingForm').addEventListener('submit', function (e) {
     const phone = document.getElementById('phone').value.trim();
     const email = document.getElementById('email').value.trim();
     const date = document.getElementById('date').value;      // "yyyy-MM-dd"
-    const time = document.getElementById('time').value;      // "HH:mm"
-    const service = document.getElementById('service').value; // "Corte de pelo" o "Corte + Barba"
+    const time = document.getElementById('time').value;        // "HH:mm"
+    const service = document.getElementById('service').value;  // "Corte de pelo" o "Corte + Barba"
 
     // Validar que todos los campos estén completos
     if (!name || !phone || !email || !date || !time || !service) {
@@ -171,7 +171,7 @@ document.getElementById('bookingForm').addEventListener('submit', function (e) {
     const bookingData = { name, phone, email, date, time, service };
 
     // URL de tu Web App (URL de despliegue real)
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxtTgci4hPSo09SQrjJjrzBvGkKVoYunwVXK0LTrB_V2DzUR72DessxlK6LYJAOdVe2/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxDabc73shfF3OarFqZipEn7l-8qsMdoGo1pwS58Y9mcmjzwLmz6nHR0W8xkBaWS-hW/exec';
 
     // Enviar la reserva mediante fetch (POST)
     fetch(scriptURL, {
